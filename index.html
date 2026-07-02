@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turismo Sucre - Capital de Bolivia</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #fafafa;
+            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+            background-size: 24px 24px;
+            color: #333333;
+        }
+
+        /* --- MENÚ DE NAVEGACIÓN --- */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #2c3e50;
+            letter-spacing: 0.5px;
+        }
+
+        header .logo span {
+            color: #b83b23;
+        }
+
+        header nav {
+            display: flex;
+            align-items: center;
+        }
+
+        header nav a {
+            color: #4a5568;
+            text-decoration: none;
+            margin-left: 22px;
+            font-weight: 600;
+            font-size: 14.5px;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #b83b23;
+        }
+
+        header nav a.btn-nav {
+            background-color: #b83b23;
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-left: 20px;
+        }
+
+        .hero {
+            position: relative;
+            background-image: url('https://t3.ftcdn.net/jpg/02/95/95/28/240_F_295952875_Pj1puDszQr6F3WBg4tKz6GGIkD25LEMb.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 180px 5%;
+            text-align: center;
+            color: #ffffff;
+            height: 90vh;   
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* Capa semitransparente profesional para que el texto blanco resalte al máximo */
+            background: linear-gradient(135deg, rgba(20, 30, 45, 0.75) 0%, rgba(184, 59, 35, 0.45) 100%); 
+            z-index: 1;
+        }
+
+        .hero-info {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 35px;
+            line-height: 1.6;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+            font-weight: 400;
+        }
+
+        /* --- SECCIONES GENERALES --- */
+        .seccion-contenido {
+            padding: 90px 8%;
+        }
+
+        /* Fondo corporativo degradado suave inspirado en la ciudad blanca y tejas coloniales */
+        .bg-premium-combinado {
+            background: linear-gradient(180deg, #f1f5f9 0%, #fff7f5 50%, #f1f5f9 100%);
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitulo-seccion {
+            text-align: center;
+            color: #64748b;
+            font-size: 16px;
+            margin-bottom: 55px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        /* --- NUEVA SECCIÓN HISTORIA (SOLO ESPAÑOL + FOTO) --- */
+        .grid-historia-moderna {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            max-width: 1150px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .texto-historia {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.03);
+            border-left: 5px solid #b83b23;
+        }
+
+        .texto-historia p {
+            color: #4a5568;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .texto-historia p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .imagen-historia-contenedor {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+            height: 100%;
+            min-height: 380px;
+        }
+
+        .img-fundacion {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .datos-clave {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px dashed #cbd5e1;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #334155;
+        }
+
+        /* --- TARJETAS LUGARES --- */
+        .contenedor-tarjetas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tarjeta {
+            background: #ffffff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(0,0,0,0.08);
+        }
+
+        .img-tarjeta {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .tarjeta-cuerpo {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .tarjeta h3 {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .tarjeta .descripcion {
+            color: #64748b;
+            font-size: 14.5px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .tarjeta .ubicacion {
+            font-size: 13px;
+            color: #475569;
+            padding-top: 14px;
+            border-top: 1px solid #f1f5f9;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .btn-maps {
+            display: block;
+            text-align: center;
+            background-color: #b83b23;
+            color: #ffffff;
+            padding: 11px 15px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-maps:hover {
+            background-color: #2c3e50;
+        }
+
+        /* --- GASTRONOMÍA --- */
+        .contenedor-gastronomia {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 35px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .plato-card {
+            background: #ffffff;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.02);
+            border: 1px solid #e2e8f0;
+            display: flex;
+            transition: transform 0.3s ease;
+        }
+
+        .plato-card:hover {
+            transform: scale(1.02);
+        }
+
+        .img-plato {
+            width: 210px;
+            object-fit: cover;
+        }
+
+        .plato-info {
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .tag-origen {
+            align-self: flex-start;
+            background: #fff0ed;
+            color: #b83b23;
+            font-size: 11.5px;
+            font-weight: 700;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .plato-info h3 { font-size: 21px; color: #2c3e50; margin-bottom: 10px; font-weight: 700; }
+        .plato-info .descripcion { color: #64748b; font-size: 14.5px; margin-bottom: 15px; line-height: 1.6; }
+        .plato-info .ingredientes { font-size: 13.5px; color: #334155; line-height: 1.5; }
+
+        /* --- SECCIÓN RESTAURANTES --- */
+        .grid-restaurantes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .restaurante-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 35px 28px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.02);
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .restaurante-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.07);
+        }
+
+        .restaurante-card .icono-rest {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .restaurante-card h3 {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .restaurante-card p {
+            color: #64748b;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .btn-ir {
+            display: inline-block;
+            background-color: #b83b23;
+            color: #ffffff;
+            padding: 11px 28px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(184, 59, 35, 0.2);
+        }
+
+        .btn-ir:hover {
+            background-color: #2c3e50;
+            box-shadow: 0 4px 12px rgba(44, 62, 80, 0.25);
+        }
+
+        /* --- ITINERARIO AVANZADO --- */
+        .itinerario {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 45px;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+            border: 1px solid #e2e8f0;
+        }
+
+        .lista-itinerario-pro li { display: flex; margin-bottom: 40px; list-style: none;}
+        .lista-itinerario-pro li:last-child { margin-bottom: 0; }
+        
+        .lista-itinerario-pro .paso {
+            background-color: #b83b23;
+            color: #ffffff;
+            font-weight: 700;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 22px;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(184, 59, 35, 0.3);
+        }
+
+        .lista-itinerario-pro h4 { color: #2c3e50; font-size: 18px; margin-bottom: 6px; font-weight: 700; }
+        .lista-itinerario-pro h4 span { color: #b83b23; font-size: 13.5px; margin-left: 12px; background: #fff0ed; padding: 3px 10px; border-radius: 4px; font-weight: 700;}
+        .lista-itinerario-pro p { color: #64748b; font-size: 15px; line-height: 1.6; }
+
+        /* --- BOTÓN TRADUCTOR --- */
+        .btn-traductor {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #2c3e50;
+            color: #ffffff;
+            padding: 14px 22px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 2px solid #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .btn-traductor:hover {
+            background-color: #b83b23;
+            transform: scale(1.05);
+        }
+
+        .lang-en { display: none; }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            text-align: center;
+            padding: 35px;
+            font-size: 14px;
+            border-top: 4px solid #b83b23;
+        }
+
+        @media (max-width: 900px) {
+            .grid-historia-moderna { grid-template-columns: 1fr; gap: 30px; }
+            .imagen-historia-contenedor { min-height: 280px; position: relative; }
+            .img-fundacion { position: relative; height: 280px; }
+            .hero { height: auto; padding: 120px 5%; }
+            .hero h1 { font-size: 42px; }
+        }
+
+        @media (max-width: 768px) {
+            .contenedor-gastronomia { grid-template-columns: 1fr; }
+            .plato-card { flex-direction: column; }
+            .img-plato { width: 100%; height: 200px; }
+            header { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="btn-traductor" onclick="toggleLanguage()">
+        <span id="txt-btn-traducir">Traducir a Inglés</span>
+    </div>
+
+    <header>
+        <div class="logo">Sucre<span>Turismo</span></div>
+        <nav>
+            <a href="#" class="lang-es">Inicio</a>
+            <a href="#" class="lang-en">Home</a>
+            
+            <a href="#historia" class="lang-es">Historia</a>
+            <a href="#historia" class="lang-en">History</a>
+            
+            <a href="#lugares" class="lang-es">Lugares</a>
+            <a href="#lugares" class="lang-en">Places</a>
+            
+            <a href="#gastronomia" class="lang-es">Gastronomía</a>
+            <a href="#gastronomia" class="lang-en">Gastronomy</a>
+            
+            <a href="#restaurantes" class="lang-es">Restaurantes</a>
+            <a href="#restaurantes" class="lang-en">Restaurants</a>
+            
+            <a href="#planear" class="btn-nav lang-es">Plan de Ruta</a>
+            <a href="#planear" class="btn-nav lang-en">Route Plan</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="hero-info">
+            <h1 class="lang-es">Descubre Sucre</h1>
+            <h1 class="lang-en">Discover Sucre</h1>
+            
+            <p class="lang-es">La ilustre Ciudad Blanca de América y capital constitucional de Bolivia. Historia, majestuosa arquitectura colonial y cultura viviente en cada rincón.</p>
+            <p class="lang-en">The illustrious White City of America and constitutional capital of Bolivia. History, majestic colonial architecture, and living culture in every corner.</p>
+        </div>
+    </section>
+
+<section id="historia" class="seccion-contenido">
+    <h2 class="titulo-seccion">
+        <span class="lang-es">Reseña Histórica</span>
+        <span class="lang-en">Historical Overview</span>
+    </h2>
+    <p class="subtitulo-seccion">
+        <span class="lang-es">Conoce los acontecimientos fundamentales que forjaron la identidad de la capital de Bolivia.</span>
+        <span class="lang-en">Discover the fundamental events that forged the identity of Bolivia's capital.</span>
+    </p>
+    
+ <section id="historia" style="padding: 60px 20px; background-color: #f9f9f9;">
+    <!-- Contenedor principal para alinear imagen y texto -->
+    <div style="display: flex; align-items: center; gap: 40px; max-width: 1100px; margin: 0 auto; flex-wrap: wrap;">
+        
+        <!-- Imagen -->
+        <div style="flex: 1; min-width: 300px;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaqU70hdoQgENbqvElSqVYPXP99ZIyh9ABvC6Ruai0ow&s=10" 
+                 alt="Estatua de Pedro de Anzúrez" 
+                 style="width: 100%; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.15);">
+        </div>
+
+        <!-- Contenedor de Texto -->
+        <div style="flex: 1; min-width: 300px; font-family: sans-serif; line-height: 1.7; color: #333;">
+            
+            <!-- Párrafos con soporte de idioma -->
+            <div class="lang-es">
+                <p>Sucre fue fundada el <strong>29 de septiembre de 1538</strong> por el conquistador <strong>Pedro Anzúrez de Camporredondo</strong>. Bautizada originalmente como <i>"Ciudad de la Plata de la Nueva Toledo"</i>, su ubicación estratégica y clima templado la convirtieron en el eje cultural y administrativo del continente, albergando la prestigiosa <strong>Universidad San Francisco Xavier</strong>.</p>
+                <p>El 25 de mayo de 1809, sus ciudadanos lideraron el <strong>Primer Grito Libertario de América</strong>, encendiendo la chispa que culminaría con la independencia de Bolivia en 1825.</p>
+            </div>
+
+            <div class="lang-en" style="display: none;">
+                <p>Sucre was founded on <strong>September 29, 1538</strong> by the conquistador <strong>Pedro Anzúrez de Camporredondo</strong>. Originally christened the <i>"City of Silver of New Toledo,"</i> its strategic location and temperate climate made it the continent's cultural and administrative hub, home to the prestigious <strong>Saint Francis Xavier University</strong>.</p>
+                <p>On May 25, 1809, its citizens led the <strong>First Libertarian Cry of America</strong>, lighting the spark that would culminate in Bolivia's independence in 1825.</p>
+            </div>
+
+            <!-- Datos Clave -->
+            <div style="margin-top: 20px; padding: 15px; border-left: 4px solid #b32525; background: #fff;">
+                <div class="lang-es">
+                    <strong>Fundación:</strong> 29 de Septiembre de 1538<br>
+                    <strong>Reconocimiento:</strong> Patrimonio Cultural de la Humanidad (UNESCO, 1991)
+                </div>
+                <div class="lang-en" style="display: none;">
+                    <strong>Foundation:</strong> September 29, 1538<br>
+                    <strong>Recognition:</strong> UNESCO World Heritage Site (1991)
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<section id="lugares" class="seccion-contenido bg-premium-combinado" style="padding: 40px 20px;">
+    <h2 class="titulo-seccion" style="text-align: center;">
+        <span class="lang-es">Lugares Imperdibles</span>
+        <span class="lang-en" style="display:none;">Must-Visit Places</span>
+    </h2>
+    <p class="subtitulo-seccion" style="text-align: center; margin-bottom: 30px;">
+        <span class="lang-es">Descubre la magia, historia y naturaleza que hacen de Sucre una joya inolvidable.</span>
+        <span class="lang-en" style="display:none;">Discover the magic, history, and nature that make Sucre an unforgettable gem.</span>
+    </p>
+    
+    <div class="contenedor-tarjetas" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+
+        <div style="background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); overflow: hidden; width: 350px; display: flex; flex-direction: column;">
+            <img src="https://cdn.correodelsur.com/img/contents/images_980/2025/08/04/47d7442b-07f1-489c-989c-8128d929e5c7.jpg" alt="Monumento a Juana Azurduy" style="width: 100%; height: 200px; object-fit: cover;">
+            <div style="padding: 20px; flex-grow: 1;">
+                <h3 style="margin: 0 0 10px 0;">Monumento a Juana Azurduy</h3>
+                <p style="color: #666; font-size: 0.95rem; line-height: 1.4;">
+                    <span class="lang-es">La renovada plaza principal de Sucre cuenta con este homenaje a la heroína de la independencia.</span>
+                    <span class="lang-en" style="display:none;">The renovated main square of Sucre features this tribute to the independence heroine.</span>
+                </p>
+                <a href="https://maps.google.com/?cid=6795689224885272719&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" style="display: block; background: #b32525; color: white; text-align: center; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 15px;">
+                    <span class="lang-es">Ver en Google Maps</span><span class="lang-en" style="display:none;">View on Google Maps</span>
+                </a>
+            </div>
+        </div>
+
+        <div style="background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); overflow: hidden; width: 350px; display: flex; flex-direction: column;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShvukD3W8Lk1RhORclo-5CNZmKPuKmOKRF0Qd3knv19w&s=10" alt="Mirador de La Recoleta" style="width: 100%; height: 200px; object-fit: cover;">
+            <div style="padding: 20px; flex-grow: 1;">
+                <h3 style="margin: 0 0 10px 0;">Mirador de La Recoleta</h3>
+                <p style="color: #666; font-size: 0.95rem; line-height: 1.4;">
+                    <span class="lang-es">Un balcón al pasado donde los tejados rojos de Sucre se funden con el cielo. ¡Simplemente mágico!</span>
+                    <span class="lang-en" style="display:none;">A balcony to the past where Sucre's red roofs blend with the sky. Simply magical!</span>
+                </p>
+                <a href="https://maps.google.com/?cid=14417806559510060719&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" style="display: block; background: #b32525; color: white; text-align: center; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 15px;">
+                    <span class="lang-es">Ver en Google Maps</span><span class="lang-en" style="display:none;">View on Google Maps</span>
+                </a>
+            </div>
+        </div>
+
+        <div style="background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); overflow: hidden; width: 350px; display: flex; flex-direction: column;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAcmV4XXN9nIFcKzXap-2cnmIvhzJZaPpfM3aSQR6o4Q&s=10" alt="Cementerio General" style="width: 100%; height: 200px; object-fit: cover;">
+            <div style="padding: 20px; flex-grow: 1;">
+                <h3 style="margin: 0 0 10px 0;">Cementerio General</h3>
+                <p style="color: #666; font-size: 0.95rem; line-height: 1.4;">
+                    <span class="lang-es">Jardín patrimonial de paz y serenidad donde la arquitectura rinde tributo a la vida.</span>
+                    <span class="lang-en" style="display:none;">A heritage garden of peace and serenity where architecture pays tribute to life.</span>
+                </p>
+                <a href="https://maps.google.com/?cid=10901472376692774237&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" style="display: block; background: #b32525; color: white; text-align: center; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 15px;">
+                    <span class="lang-es">Ver en Google Maps</span><span class="lang-en" style="display:none;">View on Google Maps</span>
+                </a>
+            </div>
+        </div>
+
+        <div style="background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); overflow: hidden; width: 350px; display: flex; flex-direction: column;">
+            <img src="https://cdn.correodelsur.com/img/contents/images_980/2025/07/10/7bf48d50-77ac-4a80-aee8-3cdfb11e0631.jpg" alt="Casa de la Libertad" style="width: 100%; height: 200px; object-fit: cover;">
+            <div style="padding: 20px; flex-grow: 1;">
+                <h3 style="margin: 0 0 10px 0;">Casa de la Libertad</h3>
+                <p style="color: #666; font-size: 0.95rem; line-height: 1.4;">
+                    <span class="lang-es">El recinto histórico más importante de Bolivia, donde se firmó el acta de independencia.</span>
+                    <span class="lang-en" style="display:none;">Bolivia's most important historical site, where the declaration of independence was signed.</span>
+                </p>
+                <a href="https://maps.google.com/?cid=7904192458436739288&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" style="display: block; background: #b32525; color: white; text-align: center; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 15px;">
+                    <span class="lang-es">Ver en Google Maps</span><span class="lang-en" style="display:none;">View on Google Maps</span>
+                </a>
+            </div>
+        </div>
+
+        <div style="background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); overflow: hidden; width: 350px; display: flex; flex-direction: column;">
+            <img src="https://turismo-america.com/wp-content/uploads/2025/06/pq5.jpg" alt="Parque Cretácico" style="width: 100%; height: 200px; object-fit: cover;">
+            <div style="padding: 20px; flex-grow: 1;">
+                <h3 style="margin: 0 0 10px 0;">Parque Cretácico</h3>
+                <p style="color: #666; font-size: 0.95rem; line-height: 1.4;">
+                    <span class="lang-es">Hogar de huellas de dinosaurios y réplicas gigantes, un viaje a la era mesozoica.</span>
+                    <span class="lang-en" style="display:none;">Home to dinosaur footprints and giant replicas, a journey to the Mesozoic era.</span>
+                </p>
+                <a href="https://maps.app.goo.gl/gZuthhTejLauP4DH6" target="_blank" style="display: block; background: #b32525; color: white; text-align: center; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 15px;">
+                    <span class="lang-es">Ver en Google Maps</span><span class="lang-en" style="display:none;">View on Google Maps</span>
+                </a>
+            </div>
+        </div>
+
+<div style="background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); overflow: hidden; width: 350px; display: flex; flex-direction: column;">
+    
+    <img src="https://cdn.correodelsur.com/img/contents/images_640/2017/04/16/nota58504_imagen57102.jpg" alt="Parque Bolívar" style="width: 350px; height: 233px; object-fit: cover;">
+    
+    <div style="padding: 20px; flex-grow: 1;">
+        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+            <h3 style="margin: 0;">Parque Bolívar</h3>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV_KjjBzrP1_RXGsI1kHt6J-9KBnhAzRkgQhWdsGBFNg&s=10" alt="Icono" style="width: 30px; height: 30px; border-radius: 50%; object-fit: cover;">
+        </div>
+        
+        <p style="color: #666; font-size: 0.95rem; line-height: 1.4;">
+            <span class="lang-es">Un oasis de encanto donde la Torre Eiffel y la naturaleza se encuentran.</span>
+            <span class="lang-en" style="display:none;">An oasis of charm where the Eiffel Tower and nature meet.</span>
+        </p>
+        
+        <a href="https://maps.app.goo.gl/NBoeE6FRtp2uJTxD9" target="_blank" style="display: block; background: #b32525; color: white; text-align: center; padding: 10px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 15px;">
+            <span class="lang-es">Ver en Google Maps</span><span class="lang-en" style="display:none;">View on Google Maps</span>
+        </a>
+    </div>
+</div>
+    </div>
+</section>
+
+<section id="gastronomia" class="seccion-contenido" style="padding: 40px 20px; background-color: #f9f9f9;">
+    <h2 class="titulo-seccion" style="text-align: center; margin-bottom: 10px;">
+        <span class="lang-es">Gastronomía y Tradición</span>
+        <span class="lang-en" style="display:none;">Gastronomy & Tradition</span>
+    </h2>
+    <p class="subtitulo-seccion" style="text-align: center; margin-bottom: 40px; color: #666;">
+        <span class="lang-es">Conoce los sabores tradicionales de Chuquisaca y sus localidades de origen exactas.</span>
+        <span class="lang-en" style="display:none;">Discover the traditional flavors of Chuquisaca and their precise towns of origin.</span>
+    </p>
+        
+    <!-- Contenedor flex para organizar las tarjetas -->
+    <div class="contenedor-gastronomia" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 25px;">
+
+        <!-- 1. El Mondongo -->
+        <div class="plato-card" style="background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); overflow: hidden; width: 350px; display: flex; flex-direction: column;">
+            <img src="https://www.cocina-boliviana.com/base/stock/Recipe/mondongo-chuquisaqueno/mondongo-chuquisaqueno_web.jpg.webp" alt="Mondongo chuquisaqueño" style="width: 100%; height: 225px; object-fit: cover;">
+            <div class="plato-info" style="padding: 20px;">
+                <span class="tag-origen" style="background: #b32525; color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">
+                    <span class="lang-es">Valles del Campo Chuquisaqueño</span>
+                    <span class="lang-en" style="display:none;">Chuquisaca Valleys</span>
+                </span>
+                <h3 style="margin: 15px 0 10px 0; color: #333;">El Mondongo</h3>
+                <p class="descripcion" style="color: #666; font-size: 0.9rem; line-height: 1.5; margin-bottom: 15px;">
+                    <span class="lang-es">Plato festivo preparado tradicionalmente para la fiesta de Todos los Santos. Su balance de ajíes proviene de las antiguas recetas de las haciendas.</span>
+                    <span class="lang-en" style="display:none;">A festive dish traditionally prepared for All Saints' Day. Its complex pepper profile stems from old recipes from historical valley estates.</span>
+                </p>
+                <p class="ingredientes" style="color: #333; font-size: 0.9rem; border-top: 1px solid #eee; padding-top: 10px;">
+                    <strong><span class="lang-es">Ingredientes:</span><span class="lang-en" style="display:none;">Ingredients:</span></strong> 
+                    <span class="lang-es">Carne de cerdo frita, ají colorado, papas y mote.</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- 2. Chorizos Chuquisaqueños -->
+        <div class="plato-card" style="background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); overflow: hidden; width: 350px; display: flex; flex-direction: column;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfDwSh0QrYVRZUpygpxpFHD3iH78aTYu35clCjVkRQNw&s=10" alt="Chorizo chuquisaqueño" style="width: 100%; height: 225px; object-fit: cover;">
+            <div class="plato-info" style="padding: 20px;">
+                <span class="tag-origen" style="background: #b32525; color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">
+                    <span class="lang-es">Sucre (Centro Urbano)</span>
+                    <span class="lang-en" style="display:none;">Sucre (Urban Center)</span>
+                </span>
+                <h3 style="margin: 15px 0 10px 0; color: #333;">Chorizos Chuquisaqueños</h3>
+                <p class="descripcion" style="color: #666; font-size: 0.9rem; line-height: 1.5; margin-bottom: 15px;">
+                    <span class="lang-es">Nacidos directamente en los salones coloniales de Sucre como un entremés criollo. Su receta artesanal es un emblema urbano.</span>
+                    <span class="lang-en" style="display:none;">Born directly within the colonial halls of Sucre as a mid-morning Creole snack.</span>
+                </p>
+                <p class="ingredientes" style="color: #333; font-size: 0.9rem; border-top: 1px solid #eee; padding-top: 10px;">
+                    <strong><span class="lang-es">Ingredientes:</span><span class="lang-en" style="display:none;">Ingredients:</span></strong> 
+                    <span class="lang-es">Carne de res y cerdo, ensalada criolla, ají y pan.</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- 3. Asado de Chancho Yotaleño -->
+        <div class="plato-card" style="background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); overflow: hidden; width: 350px; display: flex; flex-direction: column;">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjSySnqT74WKfs-Gi8LhrxrLXiqIMvdDtdQwhln28Ddwb6b5titftXVUWd08FRk_dfk2-znZqweoXDIns43zdIr2_M7J1bH2G18VZEltuc71LH_uPDvtRyK0_3fQvFa82wF7FMuOIYNYD06/s1600/lechon-al-horno-boliviano-640x427.jpg" alt="Asado de Chancho Yotaleño" style="width: 100%; height: 225px; object-fit: cover;">
+            <div class="plato-info" style="padding: 20px;">
+                <span class="tag-origen" style="background: #b32525; color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">
+                    <span class="lang-es">Yotala (Municipio Turístico)</span>
+                    <span class="lang-en" style="display:none;">Yotala Municipality</span>
+                </span>
+                <h3 style="margin: 15px 0 10px 0; color: #333;">Asado de Chancho Yotaleño</h3>
+                <p class="descripcion" style="color: #666; font-size: 0.9rem; line-height: 1.5; margin-bottom: 15px;">
+                    <span class="lang-es">Originario de Yotala. El cerdo se cuece lentamente dándole un sabor jugoso inigualable.</span>
+                    <span class="lang-en" style="display:none;">Originating from Yotala. The pork is slow-cooked, giving it an unparalleled juicy flavor.</span>
+                </p>
+                <p class="ingredientes" style="color: #333; font-size: 0.9rem; border-top: 1px solid #eee; padding-top: 10px;">
+                    <strong><span class="lang-es">Ingredientes:</span><span class="lang-en" style="display:none;">Ingredients:</span></strong> 
+                    <span class="lang-es">Cerdo, ají colorado, chicha local y mote.</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- 4. Karapecho Chuquisaqueño -->
+        <div class="plato-card" style="background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); overflow: hidden; width: 350px; display: flex; flex-direction: column;">
+            <img src="https://gastronomiabolivia.com/wp-content/uploads/karapecho-chuquisaca.jpg" alt="Karapecho Chuquisaqueño" style="width: 100%; height: 225px; object-fit: cover;">
+            <div class="plato-info" style="padding: 20px;">
+                <span class="tag-origen" style="background: #b32525; color: white; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: bold;">
+                    <span class="lang-es">Chuquisaca (Tradición Rural)</span>
+                    <span class="lang-en" style="display:none;">Chuquisaca (Rural Tradition)</span>
+                </span>
+                <h3 style="margin: 15px 0 10px 0; color: #333;">Karapecho Chuquisaqueño</h3>
+                <p class="descripcion" style="color: #666; font-size: 0.9rem; line-height: 1.5; margin-bottom: 15px;">
+                    <span class="lang-es">Un plato tradicional que destaca por su carne de res seca (charque), preparada con el auténtico sabor de los valles.</span>
+                    <span class="lang-en" style="display:none;">A traditional dish known for its dried beef (charque), prepared with the authentic flavor of the valleys.</span>
+                </p>
+                <p class="ingredientes" style="color: #333; font-size: 0.9rem; border-top: 1px solid #eee; padding-top: 10px;">
+                    <strong><span class="lang-es">Ingredientes:</span><span class="lang-en" style="display:none;">Ingredients:</span></strong> 
+                    <span class="lang-es">Charque de res, arroz, papas, huevo y ensalada.</span>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+    <section id="restaurantes" class="seccion-contenido bg-premium-combinado">
+        <h2 class="titulo-seccion"><span class="lang-es">Restaurantes Reconocidos</span><span class="lang-en">Renowned Restaurants</span></h2>
+        <p class="subtitulo-seccion"><span class="lang-es">Establecimientos gastronómicos y culturales altamente recomendados para disfrutar tu estadía.</span><span class="lang-en">Highly recommended dining and cultural venues to enjoy your stay.</span></p>
+        
+        <div class="grid-restaurantes">
+            <div class="restaurante-card">
+                <div>
+                    <div class="icono-rest">🍽️</div>
+                    <h3>Azafrán</h3>
+                    <p class="lang-es">Prestigioso restaurante y servicio de catering de primer nivel. Destaca por su alta cocina y la perfecta fusión de sabores e ingredientes tradicionales con técnicas contemporáneas.</p>
+                    <p class="lang-en">Prestigious top-tier restaurant and catering service. Known for its fine dining and perfect fusion of traditional flavors with contemporary culinary techniques.</p>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/azafranrestaurantycatering/?locale=es_LA" target="_blank" class="btn-ir"><span class="lang-es"> Ir al sitio</span><span class="lang-en"> Go to site</span></a>
+                </div>
+            </div>
+
+            <div class="restaurante-card">
+                <div>
+                    <div class="icono-rest">🎭</div>
+                    <h3>Centro Cultural Orígenes</h3>
+                    <p class="lang-es">Un espacio cultural único e imperdible en Sucre. Combina de forma espectacular una cena de platos típicos regionales con shows folclóricos de danza boliviana en vivo.</p>
+                    <p class="lang-en">A unique and unmissable cultural venue in Sucre. It beautifully combines a dinner of authentic regional dishes with live dynamic Bolivian folklore dance shows.</p>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/EspacioCulturalOrigenes/?locale=es_LA" target="_blank" class="btn-ir"><span class="lang-es"> Ir al sitio</span><span class="lang-en"> Go to site</span></a>
+                </div>
+            </div>
+
+            <div class="restaurante-card">
+                <div>
+                    <div class="icono-rest">☕</div>
+                    <h3>La Terraza</h3>
+                    <p class="lang-es">Excelente alternativa para relajarse y disfrutar del ambiente chuquisaqueño. Cuenta con un menú variado ideal para cafés por la tarde, almuerzos ligeros o cenas amenas.</p>
+                    <p class="lang-en">Excellent option to relax and absorb the local atmosphere. It features a diverse menu ideal for afternoon coffee, light lunches, or pleasant dinners.</p>
+                </div>
+                <div>
+                    <a href="https://share.google/cOvaAgvEUs4MmbiVj" target="_blank" class="btn-ir"><span class="lang-es"> Ir al sitio</span><span class="lang-en"> Go to site</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="planear" class="seccion-contenido">
+        <h2 class="titulo-seccion"><span class="lang-es">Itinerario Completo Recomendado</span><span class="lang-en">Recommended Full Itinerary</span></h2>
+        <p class="subtitulo-seccion"><span class="lang-es">Sigue esta precisa ruta gastronómica e histórica para aprovechar el día al máximo.</span><span class="lang-en">Follow this precise culinary and historical path to maximize your day trip.</span></p>
+        
+        <div class="itinerario">
+            <ul class="lista-itinerario-pro">
+                <li>
+                    <span class="paso">1</span>
+                    <div>
+                        <h4><span class="lang-es">Desayuno en el Centro</span><span class="lang-en">Breakfast Downtown</span> <span>08:30 AM</span></h4>
+                        <p class="lang-es">Comienza tu mañana con un excelente café y repostería artesanal en <strong>Café Metro</strong>, ubicado estratégicamente en plena Plaza Principal, ideal para cargar energías viendo el despertar de la ciudad.</p>
+                        <p class="lang-en">Start your morning with an excellent coffee and artisan pastry at <strong>Café Metro</strong>, strategically located in the main square, perfect to gather energy while watching the city wake up.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="paso">2</span>
+                    <div>
+                        <h4><span class="lang-es">Mañana Cultural e Histórica</span><span class="lang-en">Cultural & History Morning</span> <span>10:00 AM</span></h4>
+                        <p class="lang-es">Cruza la acera para ingresar a la histórica <strong>Casa de la Libertad</strong> y conocer la gran sala donde nació la República de Bolivia. Luego camina hacia los jardines del casco viejo.</p>
+                        <p class="lang-en">Cross the street to step into the historical <strong>Freedom House</strong> and visit the grand hall where the Republic of Bolivia was born. Afterwards, walk along the old quarter's gardens.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="paso">3</span>
+                    <div>
+                        <h4><span class="lang-es">Almuerzo Gourmet en Azafrán</span><span class="lang-en">Gourmet Lunch at Azafrán</span> <span>12:40 PM</span></h4>
+                        <p class="lang-es">Dirígete al prestigioso restaurante <strong>Azafrán</strong> para disfrutar de un almuerzo de primer nivel que fusiona de manera magistral los sabores e ingredientes chuquisaqueños con técnicas contemporáneas.</p>
+                        <p class="lang-en">Head out to the prestigious <strong>Azafrán</strong> restaurant to enjoy a high-end lunch that masterfully blends local Chuquisaca ingredients with contemporary styles.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="paso">4</span>
+                    <div>
+                        <h4><span class="lang-es">Paseo y Atardecer Colonial</span><span class="lang-en">Stroll & Colonial Sunset</span> <span>16:00 PM</span></h4>
+                        <p class="lang-es">Por la tarde, toma una caminata ligera cuesta arriba hacia el histórico <strong>Mirador de la Recoleta</strong>. Disfruta de un refresco tradicional bajo la arquería blanca mientras contemplas el atardecer sobre los techos coloniales.</p>
+                        <p class="lang-en">In the afternoon, take a light hike uphill to the historic <strong>La Recoleta Viewpoint</strong>. Enjoy a traditional drink beneath the white arches while watching the sunset over colonial tiles.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p class="lang-es">© 2026 Portal de Turismo de Sucre. Desarrollado como Proyecto Académico de Frontend.</p>
+        <p class="lang-en">© 2026 Sucre Tourism Portal. Developed as a Frontend Academic Project.</p>
+    </footer>
+
+    <script>
+        let currentLang = 'es';
+
+        function toggleLanguage() {
+            const elementsEs = document.querySelectorAll('.lang-es');
+            const elementsEn = document.querySelectorAll('.lang-en');
+            const btnText = document.getElementById('txt-btn-traducir');
+
+            if (currentLang === 'es') {
+                elementsEs.forEach(el => el.style.display = 'none');
+                elementsEn.forEach(el => el.style.display = 'block');
+                btnText.textContent = 'Traducir a Español';
+                currentLang = 'en';
+            } else {
+                elementsEs.forEach(el => el.style.display = 'block');
+                elementsEn.forEach(el => el.style.display = 'none');
+                btnText.textContent = 'Traducir a Inglés';
+                currentLang = 'es';
+            }
+        }
+    </script>
+
+</body>
+</html>
