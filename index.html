@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ciberseguridad - Protección Digital</title>
+    <title>Turismo Sucre - Capital de Bolivia</title>
     
     <style>
         * {
@@ -26,7 +26,7 @@
 
         /* --- MENÚ DE NAVEGACIÓN --- */
         header {
-            background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
+            background: linear-gradient(90deg, #ffffff 0%, #f8f9fa 100%);
             backdrop-filter: blur(10px);
             display: flex;
             justify-content: space-between;
@@ -35,19 +35,19 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
         }
 
         header .logo {
             font-size: 26px;
             font-weight: 800;
-            color: #ffffff;
+            color: #2c3e50;
             letter-spacing: 0.5px;
         }
 
         header .logo span {
-            color: #00d4ff;
-            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+            color: #b83b23;
+            text-shadow: 0 0 8px rgba(184, 59, 35, 0.2);
         }
 
         header nav {
@@ -57,7 +57,7 @@
         }
 
         header nav a {
-            color: #cbd5e1;
+            color: #4a5568;
             text-decoration: none;
             margin-left: 22px;
             font-weight: 600;
@@ -67,30 +67,31 @@
         }
 
         header nav a:hover {
-            color: #00d4ff;
-            text-shadow: 0 0 8px rgba(0, 212, 255, 0.6);
+            color: #b83b23;
         }
 
         header nav a.btn-nav {
-            background: linear-gradient(135deg, #00d4ff 0%, #0088cc 100%);
-            color: #0f172a;
+            background: linear-gradient(135deg, #b83b23 0%, #8b2c1a 100%);
+            color: #ffffff;
             padding: 10px 20px;
             border-radius: 6px;
             margin-left: 20px;
             font-weight: 700;
-            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(184, 59, 35, 0.2);
         }
 
         header nav a.btn-nav:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
+            box-shadow: 0 6px 18px rgba(184, 59, 35, 0.3);
         }
 
         .hero {
             position: relative;
-            background: linear-gradient(135deg, #001a3d 0%, #0f3a7d 100%);
+            background: linear-gradient(135deg, #f5e6d3 0%, #e8d4c0 100%);
+            background-image: url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=80');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             padding: 180px 5%;
             text-align: center;
             color: #ffffff;
@@ -101,31 +102,19 @@
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(0,212,255,0.1)" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="url(%23grid)"/></svg>');
-            opacity: 0.3;
-            z-index: 1;
-        }
-
         .overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(0, 212, 255, 0.15) 100%);
-            z-index: 2;
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.7) 0%, rgba(184, 59, 35, 0.5) 100%);
+            z-index: 1;
         }
 
         .hero-info {
             position: relative;
-            z-index: 3;
+            z-index: 2;
             max-width: 850px;
             margin: 0 auto;
         }
@@ -134,9 +123,8 @@
             font-size: 56px;
             font-weight: 800;
             margin-bottom: 20px;
-            text-shadow: 0 4px 20px rgba(0, 212, 255, 0.4);
+            text-shadow: 0 4px 12px rgba(0,0,0,0.6);
             letter-spacing: -0.5px;
-            color: #00d4ff;
         }
 
         .hero p {
@@ -153,25 +141,22 @@
         }
 
         .bg-premium-combinado {
-            background: linear-gradient(180deg, #f1f5f9 0%, #e0f7ff 50%, #f1f5f9 100%);
-            border-top: 3px solid #00d4ff;
-            border-bottom: 3px solid #00d4ff;
+            background: linear-gradient(180deg, #f1f5f9 0%, #fff7f5 50%, #f1f5f9 100%);
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
         }
 
         .titulo-seccion {
             text-align: center;
             font-size: 42px;
-            color: #0f172a;
+            color: #2c3e50;
             margin-bottom: 15px;
             font-weight: 800;
             letter-spacing: -0.5px;
         }
 
         .titulo-seccion span {
-            background: linear-gradient(135deg, #0f172a 0%, #00d4ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #b83b23;
         }
 
         .subtitulo-seccion {
@@ -185,7 +170,7 @@
             line-height: 1.6;
         }
 
-        /* --- NUEVA SECCIÓN INTRODUCCIÓN --- */
+        /* --- NUEVA SECCIÓN HISTORIA --- */
         .grid-historia-moderna {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
@@ -200,7 +185,7 @@
             padding: 40px;
             border-radius: 16px;
             box-shadow: 0 10px 35px rgba(0,0,0,0.03);
-            border-left: 5px solid #00d4ff;
+            border-left: 5px solid #b83b23;
         }
 
         .texto-historia p {
@@ -222,7 +207,7 @@
             box-shadow: 0 15px 40px rgba(0,0,0,0.12);
             height: 100%;
             min-height: 380px;
-            border: 2px solid #00d4ff;
+            border: 2px solid #b83b23;
         }
 
         .img-fundacion {
@@ -243,7 +228,7 @@
             color: #334155;
         }
 
-        /* --- TARJETAS MÓDULOS --- */
+        /* --- TARJETAS LUGARES --- */
         .contenedor-tarjetas {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -258,7 +243,7 @@
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid #e2e8f0;
+            border: 1px solid #e2e8f0;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -272,14 +257,14 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #00d4ff 0%, #0088cc 100%);
+            background: linear-gradient(90deg, #b83b23 0%, #8b2c1a 100%);
             z-index: 10;
         }
 
         .tarjeta:hover {
             transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0, 212, 255, 0.15);
-            border-color: #00d4ff;
+            box-shadow: 0 25px 50px rgba(184, 59, 35, 0.15);
+            border-color: #b83b23;
         }
 
         .img-tarjeta {
@@ -299,7 +284,7 @@
 
         .tarjeta h3 {
             font-size: 20px;
-            color: #0f172a;
+            color: #2c3e50;
             margin-bottom: 12px;
             font-weight: 700;
         }
@@ -323,24 +308,24 @@
         .btn-maps {
             display: block;
             text-align: center;
-            background: linear-gradient(135deg, #00d4ff 0%, #0088cc 100%);
-            color: #0f172a;
+            background: linear-gradient(135deg, #b83b23 0%, #8b2c1a 100%);
+            color: #ffffff;
             padding: 11px 15px;
             text-decoration: none;
             border-radius: 6px;
             font-weight: 700;
             font-size: 14px;
             transition: all 0.3s;
-            box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(184, 59, 35, 0.2);
         }
 
         .btn-maps:hover {
             transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
+            box-shadow: 0 6px 20px rgba(184, 59, 35, 0.4);
         }
 
-        /* --- AMENAZAS Y RIESGOS --- */
-        .contenedor-amenazas {
+        /* --- GASTRONOMÍA --- */
+        .contenedor-gastronomia {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
             gap: 35px;
@@ -348,7 +333,7 @@
             margin: 0 auto;
         }
 
-        .amenaza-card {
+        .plato-card {
             background: #ffffff;
             border-radius: 14px;
             overflow: hidden;
@@ -359,29 +344,29 @@
             position: relative;
         }
 
-        .amenaza-card::before {
+        .plato-card::before {
             content: '';
             position: absolute;
             left: 0;
             top: 0;
             bottom: 0;
             width: 4px;
-            background: linear-gradient(180deg, #ff6b6b 0%, #ff0000 100%);
+            background: linear-gradient(180deg, #b83b23 0%, #8b2c1a 100%);
             z-index: 10;
         }
 
-        .amenaza-card:hover {
+        .plato-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 40px rgba(184, 59, 35, 0.1);
         }
 
-        .img-amenaza {
+        .img-plato {
             width: 220px;
             object-fit: cover;
             flex-shrink: 0;
         }
 
-        .amenaza-info {
+        .plato-info {
             padding: 28px;
             display: flex;
             flex-direction: column;
@@ -389,10 +374,10 @@
             flex-grow: 1;
         }
 
-        .tag-amenaza {
+        .tag-origen {
             align-self: flex-start;
-            background: #fff0f0;
-            color: #ff0000;
+            background: #fff0ed;
+            color: #b83b23;
             font-size: 11.5px;
             font-weight: 700;
             padding: 6px 14px;
@@ -402,21 +387,21 @@
             letter-spacing: 0.5px;
         }
 
-        .amenaza-info h3 { 
+        .plato-info h3 { 
             font-size: 21px; 
-            color: #0f172a; 
+            color: #2c3e50; 
             margin-bottom: 10px; 
             font-weight: 700; 
         }
 
-        .amenaza-info .descripcion { 
+        .plato-info .descripcion { 
             color: #64748b; 
             font-size: 14.5px; 
             margin-bottom: 15px; 
             line-height: 1.6; 
         }
 
-        .amenaza-info .detalles { 
+        .plato-info .ingredientes { 
             font-size: 13.5px; 
             color: #334155; 
             line-height: 1.6;
@@ -425,8 +410,8 @@
             border-radius: 6px;
         }
 
-        /* --- SECCIÓN MEJORES PRÁCTICAS --- */
-        .grid-practicas {
+        /* --- SECCIÓN RESTAURANTES --- */
+        .grid-restaurantes {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
@@ -434,7 +419,7 @@
             margin: 0 auto;
         }
 
-        .practica-card {
+        .restaurante-card {
             background: #ffffff;
             border-radius: 14px;
             padding: 35px 28px;
@@ -449,43 +434,43 @@
             overflow: hidden;
         }
 
-        .practica-card::before {
+        .restaurante-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             height: 3px;
-            background: linear-gradient(90deg, #00d4ff 0%, #0088cc 100%);
+            background: linear-gradient(90deg, #b83b23 0%, #8b2c1a 100%);
             transform: scaleX(0);
             transition: transform 0.3s;
             transform-origin: left;
         }
 
-        .practica-card:hover {
+        .restaurante-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.1);
-            border-color: #00d4ff;
+            box-shadow: 0 20px 40px rgba(184, 59, 35, 0.1);
+            border-color: #b83b23;
         }
 
-        .practica-card:hover::before {
+        .restaurante-card:hover::before {
             transform: scaleX(1);
         }
 
-        .practica-card .icono-rest {
+        .restaurante-card .icono-rest {
             font-size: 48px;
             margin-bottom: 15px;
-            filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.3));
+            filter: drop-shadow(0 0 8px rgba(184, 59, 35, 0.2));
         }
 
-        .practica-card h3 {
-            color: #0f172a;
+        .restaurante-card h3 {
+            color: #2c3e50;
             font-size: 22px;
             margin-bottom: 12px;
             font-weight: 700;
         }
 
-        .practica-card p {
+        .restaurante-card p {
             color: #64748b;
             font-size: 15px;
             line-height: 1.6;
@@ -494,20 +479,20 @@
 
         .btn-ir {
             display: inline-block;
-            background: linear-gradient(135deg, #00d4ff 0%, #0088cc 100%);
-            color: #0f172a;
+            background: linear-gradient(135deg, #b83b23 0%, #8b2c1a 100%);
+            color: #ffffff;
             padding: 12px 28px;
             text-decoration: none;
             border-radius: 6px;
             font-weight: 700;
             font-size: 14px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(184, 59, 35, 0.2);
         }
 
         .btn-ir:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(0, 212, 255, 0.5);
+            box-shadow: 0 6px 22px rgba(184, 59, 35, 0.3);
         }
 
         /* --- ITINERARIO AVANZADO --- */
@@ -518,7 +503,7 @@
             padding: 45px;
             border-radius: 16px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.03);
-            border: 2px solid #00d4ff;
+            border: 2px solid #b83b23;
         }
 
         .lista-itinerario-pro li { 
@@ -532,8 +517,8 @@
         }
         
         .lista-itinerario-pro .paso {
-            background: linear-gradient(135deg, #00d4ff 0%, #0088cc 100%);
-            color: #0f172a;
+            background: linear-gradient(135deg, #b83b23 0%, #8b2c1a 100%);
+            color: #ffffff;
             font-weight: 700;
             width: 42px;
             height: 42px;
@@ -543,21 +528,21 @@
             justify-content: center;
             margin-right: 22px;
             flex-shrink: 0;
-            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.4);
+            box-shadow: 0 4px 15px rgba(184, 59, 35, 0.3);
         }
 
         .lista-itinerario-pro h4 { 
-            color: #0f172a; 
+            color: #2c3e50; 
             font-size: 18px; 
             margin-bottom: 6px; 
             font-weight: 700; 
         }
 
         .lista-itinerario-pro h4 span { 
-            color: #0088cc; 
+            color: #b83b23; 
             font-size: 13.5px; 
             margin-left: 12px; 
-            background: #e0f7ff; 
+            background: #fff0ed; 
             padding: 4px 10px; 
             border-radius: 4px; 
             font-weight: 700;
@@ -574,37 +559,37 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: #00d4ff;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: #b83b23;
             padding: 14px 22px;
             border-radius: 50px;
             font-weight: 700;
             font-size: 14px;
             cursor: pointer;
-            box-shadow: 0 5px 25px rgba(0, 212, 255, 0.3);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
             z-index: 9999;
             display: flex;
             align-items: center;
             gap: 8px;
-            border: 2px solid #00d4ff;
+            border: 2px solid #b83b23;
             transition: all 0.3s ease;
         }
 
         .btn-traductor:hover {
             transform: scale(1.08);
-            box-shadow: 0 8px 35px rgba(0, 212, 255, 0.5);
+            box-shadow: 0 8px 35px rgba(184, 59, 35, 0.3);
         }
 
         .lang-en { display: none; }
 
         /* --- FOOTER --- */
         footer {
-            background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
+            background: linear-gradient(90deg, #2c3e50 0%, #34495e 100%);
             color: #94a3b8;
             text-align: center;
             padding: 40px 35px;
             font-size: 14px;
-            border-top: 4px solid #00d4ff;
+            border-top: 4px solid #b83b23;
         }
 
         footer p {
@@ -638,13 +623,13 @@
         }
 
         @media (max-width: 768px) {
-            .contenedor-amenazas { 
+            .contenedor-gastronomia { 
                 grid-template-columns: 1fr; 
             }
-            .amenaza-card { 
+            .plato-card { 
                 flex-direction: column; 
             }
-            .img-amenaza { 
+            .img-plato { 
                 width: 100%; 
                 height: 220px; 
             }
@@ -669,519 +654,374 @@
     </div>
 
     <header>
-        <div class="logo">Cyber<span>Guard</span></div>
+        <div class="logo">Sucre<span>Turismo</span></div>
         <nav>
             <a href="#" class="lang-es">Inicio</a>
             <a href="#" class="lang-en">Home</a>
             
-            <a href="#intro" class="lang-es">¿Qué es?</a>
-            <a href="#intro" class="lang-en">What is it?</a>
+            <a href="#historia" class="lang-es">Historia</a>
+            <a href="#historia" class="lang-en">History</a>
             
-            <a href="#amenazas" class="lang-es">Amenazas</a>
-            <a href="#amenazas" class="lang-en">Threats</a>
+            <a href="#lugares" class="lang-es">Lugares</a>
+            <a href="#lugares" class="lang-en">Places</a>
             
-            <a href="#modulos" class="lang-es">Módulos</a>
-            <a href="#modulos" class="lang-en">Modules</a>
+            <a href="#gastronomia" class="lang-es">Gastronomía</a>
+            <a href="#gastronomia" class="lang-en">Gastronomy</a>
             
-            <a href="#practicas" class="lang-es">Prácticas</a>
-            <a href="#practicas" class="lang-en">Best Practices</a>
+            <a href="#restaurantes" class="lang-es">Restaurantes</a>
+            <a href="#restaurantes" class="lang-en">Restaurants</a>
             
-            <a href="#ruta" class="btn-nav lang-es">Ruta de Aprendizaje</a>
-            <a href="#ruta" class="btn-nav lang-en">Learning Path</a>
+            <a href="#planear" class="btn-nav lang-es">Plan de Ruta</a>
+            <a href="#planear" class="btn-nav lang-en">Route Plan</a>
         </nav>
     </header>
 
     <section class="hero">
         <div class="overlay"></div>
         <div class="hero-info">
-            <h1 class="lang-es">Protege tu Mundo Digital</h1>
-            <h1 class="lang-en">Protect Your Digital World</h1>
+            <h1 class="lang-es">Descubre Sucre</h1>
+            <h1 class="lang-en">Discover Sucre</h1>
             
-            <p class="lang-es">Aprende ciberseguridad desde lo básico hasta técnicas avanzadas. Fortalece tus defensas contra amenazas digitales y domina el arte de la protección informática.</p>
-            <p class="lang-en">Learn cybersecurity from basics to advanced techniques. Strengthen your defenses against digital threats and master the art of information protection.</p>
+            <p class="lang-es">La ilustre Ciudad Blanca de América y capital constitucional de Bolivia. Historia, majestuosa arquitectura colonial y cultura viviente en cada rincón.</p>
+            <p class="lang-en">The illustrious White City of America and constitutional capital of Bolivia. History, majestic colonial architecture, and living culture in every corner.</p>
         </div>
     </section>
 
-    <section id="intro" class="seccion-contenido">
+    <section id="historia" class="seccion-contenido">
         <h2 class="titulo-seccion">
-            <span class="lang-es">¿Qué es la Ciberseguridad?</span>
-            <span class="lang-en">What is Cybersecurity?</span>
+            <span class="lang-es">Reseña Histórica</span>
+            <span class="lang-en">Historical Overview</span>
         </h2>
         <p class="subtitulo-seccion">
-            <span class="lang-es">La ciberseguridad es un conjunto de prácticas y tecnologías diseñadas para proteger sistemas, redes y datos de ataques digitales maliciosos.</span>
-            <span class="lang-en">Cybersecurity is a set of practices and technologies designed to protect systems, networks, and data from malicious digital attacks.</span>
+            <span class="lang-es">Conoce los acontecimientos fundamentales que forjaron la identidad de la capital de Bolivia.</span>
+            <span class="lang-en">Discover the fundamental events that forged the identity of Bolivia's capital.</span>
         </p>
         
         <div class="grid-historia-moderna">
             <div class="texto-historia">
                 <div class="lang-es">
-                    <p><strong>La importancia de la ciberseguridad</strong> ha crecido exponencialmente en los últimos años. Con el aumento de la digitalización, los ciberataques se han vuelto más sofisticados y frecuentes, afectando a empresas, gobiernos e individuos por igual.</p>
-                    <p>En la era digital actual, proteger tu información personal, financiera y profesional es más crítico que nunca. Los ciberdelincuentes utilizan técnicas avanzadas como <strong>phishing, ransomware, malware</strong> y <strong>ingeniería social</strong> para comprometer sistemas y robar datos valiosos.</p>
-                    <div style="margin-top: 25px; padding: 20px; background: #e0f7ff; border-left: 4px solid #00d4ff; border-radius: 6px;">
-                        <strong style="color: #0088cc;">Datos Clave:</strong><br>
-                        • Más de 4 mil millones de registros se pierden anualmente<br>
-                        • El costo promedio de una brecha: $4.29 millones USD<br>
-                        • El tiempo promedio de detección: 207 días
+                    <p><strong>Sucre fue fundada el 29 de septiembre de 1538</strong> por el conquistador <strong>Pedro Anzúrez de Camporredondo</strong>. Bautizada originalmente como <strong>"Ciudad de la Plata de Nueva Granada"</strong>, esta ciudad se convirtió rápidamente en uno de los centros administrativos más importantes de la colonia española en América del Sur.</p>
+                    <p>El <strong>25 de mayo de 1809, sus ciudadanos lideraron el Primer Grito Libertario de América</strong>, encendiendo la chispa que culminaría con la independencia de Bolivia en 1825. Esta fecha marca el inicio de las luchas independentistas en toda América Latina, por lo que Sucre es conocida como la <strong>"Cuna de la Libertad Americana"</strong>.</p>
+                    <div style="margin-top: 25px; padding: 20px; background: #fff0ed; border-left: 4px solid #b83b23; border-radius: 6px;">
+                        <strong style="color: #b83b23;">Datos Clave:</strong><br>
+                        • <strong>Fundación:</strong> 29 de Septiembre de 1538<br>
+                        • <strong>Reconocimiento:</strong> Patrimonio Cultural de la Humanidad (UNESCO, 1991)<br>
+                        • <strong>Población:</strong> Aproximadamente 276,000 habitantes
                     </div>
                 </div>
                 
                 <div class="lang-en" style="display: none;">
-                    <p><strong>The importance of cybersecurity</strong> has grown exponentially in recent years. With increased digitalization, cyberattacks have become more sophisticated and frequent, affecting companies, governments, and individuals alike.</p>
-                    <p>In today's digital era, protecting your personal, financial, and professional information is more critical than ever. Cybercriminals use advanced techniques such as <strong>phishing, ransomware, malware</strong>, and <strong>social engineering</strong> to compromise systems and steal valuable data.</p>
-                    <div style="margin-top: 25px; padding: 20px; background: #e0f7ff; border-left: 4px solid #00d4ff; border-radius: 6px;">
-                        <strong style="color: #0088cc;">Key Data:</strong><br>
-                        • Over 4 billion records lost annually<br>
-                        • Average cost of a breach: $4.29 million USD<br>
-                        • Average detection time: 207 days
+                    <p><strong>Sucre was founded on September 29, 1538</strong> by the conquistador <strong>Pedro Anzúrez de Camporredondo</strong>. Originally christened the <strong>"City of Silver of New Granada"</strong>, this city quickly became one of the most important administrative centers of Spanish colonization in South America.</p>
+                    <p>On <strong>May 25, 1809, its citizens led the First Libertarian Cry of America</strong>, lighting the spark that would culminate in Bolivia's independence in 1825. This date marks the beginning of independence struggles throughout Latin America, which is why Sucre is known as the <strong>"Cradle of American Freedom"</strong>.</p>
+                    <div style="margin-top: 25px; padding: 20px; background: #fff0ed; border-left: 4px solid #b83b23; border-radius: 6px;">
+                        <strong style="color: #b83b23;">Key Data:</strong><br>
+                        • <strong>Foundation:</strong> September 29, 1538<br>
+                        • <strong>Recognition:</strong> UNESCO World Heritage Site (1991)<br>
+                        • <strong>Population:</strong> Approximately 276,000 inhabitants
                     </div>
                 </div>
             </div>
 
             <div class="imagen-historia-contenedor">
-                <img src="https://images.unsplash.com/photo-1550439062-7cdfe299d19b?w=500&q=80" 
-                     alt="Ciberseguridad" 
+                <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?w=500&q=80" 
+                     alt="Sucre Histórico" 
                      class="img-fundacion">
             </div>
         </div>
     </section>
 
-    <section id="amenazas" class="seccion-contenido bg-premium-combinado">
+    <section id="lugares" class="seccion-contenido bg-premium-combinado">
         <h2 class="titulo-seccion">
-            <span class="lang-es">Amenazas Cibernéticas Principales</span>
-            <span class="lang-en">Major Cyber Threats</span>
+            <span class="lang-es">Lugares Imperdibles</span>
+            <span class="lang-en">Must-Visit Places</span>
         </h2>
         <p class="subtitulo-seccion">
-            <span class="lang-es">Conoce las amenazas más comunes y cómo protegerte de ellas.</span>
-            <span class="lang-en">Learn about the most common threats and how to protect yourself.</span>
-        </p>
-        
-        <div class="contenedor-amenazas">
-
-            <!-- 1. Phishing -->
-            <div class="amenaza-card">
-                <img src="https://images.unsplash.com/photo-1559027615-cd2628902d4a?w=300&q=80" alt="Phishing" class="img-amenaza">
-                <div class="amenaza-info">
-                    <div>
-                        <span class="tag-amenaza" class="lang-es">Amenaza Alta</span>
-                        <span class="tag-amenaza" class="lang-en" style="display: none;">High Threat</span>
-                        <h3 class="lang-es">Phishing</h3>
-                        <h3 class="lang-en" style="display: none;">Phishing</h3>
-                        <p class="descripcion lang-es">Técnica de engaño donde se suplanta la identidad de entidades confiables mediante correos fraudulentos para obtener datos sensibles.</p>
-                        <p class="descripcion lang-en" style="display: none;">A deception technique where trusted entities are impersonated through fraudulent emails to obtain sensitive data.</p>
-                    </div>
-                    <div class="detalles lang-es">
-                        <strong>Métodos comunes:</strong><br>
-                        • Emails falsos de bancos<br>
-                        • Links maliciosos<br>
-                        • Suplantación de identidad
-                    </div>
-                    <div class="detalles lang-en" style="display: none;">
-                        <strong>Common Methods:</strong><br>
-                        • Fake bank emails<br>
-                        • Malicious links<br>
-                        • Identity spoofing
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2. Ransomware -->
-            <div class="amenaza-card">
-                <img src="https://images.unsplash.com/photo-1563206678-bfd4b4d1e50e?w=300&q=80" alt="Ransomware" class="img-amenaza">
-                <div class="amenaza-info">
-                    <div>
-                        <span class="tag-amenaza" class="lang-es">Amenaza Crítica</span>
-                        <span class="tag-amenaza" class="lang-en" style="display: none;">Critical Threat</span>
-                        <h3 class="lang-es">Ransomware</h3>
-                        <h3 class="lang-en" style="display: none;">Ransomware</h3>
-                        <p class="descripcion lang-es">Malware que cifra datos importantes y exige pago para recuperarlos. Afecta masivamente a empresas y gobiernos.</p>
-                        <p class="descripcion lang-en" style="display: none;">Malware that encrypts important data and demands payment for recovery. Affects companies and governments massively.</p>
-                    </div>
-                    <div class="detalles lang-es">
-                        <strong>Características:</strong><br>
-                        • Cifrado de archivos<br>
-                        • Demandas de rescate<br>
-                        • Exfiltración de datos
-                    </div>
-                    <div class="detalles lang-en" style="display: none;">
-                        <strong>Characteristics:</strong><br>
-                        • File encryption<br>
-                        • Ransom demands<br>
-                        • Data exfiltration
-                    </div>
-                </div>
-            </div>
-
-            <!-- 3. Malware -->
-            <div class="amenaza-card">
-                <img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=300&q=80" alt="Malware" class="img-amenaza">
-                <div class="amenaza-info">
-                    <div>
-                        <span class="tag-amenaza" class="lang-es">Amenaza Alta</span>
-                        <span class="tag-amenaza" class="lang-en" style="display: none;">High Threat</span>
-                        <h3 class="lang-es">Malware</h3>
-                        <h3 class="lang-en" style="display: none;">Malware</h3>
-                        <p class="descripcion lang-es">Software malicioso diseñado para infiltrarse en sistemas y causar daños, robar información o tomar control.</p>
-                        <p class="descripcion lang-en" style="display: none;">Malicious software designed to infiltrate systems and cause damage, steal information, or take control.</p>
-                    </div>
-                    <div class="detalles lang-es">
-                        <strong>Tipos:</strong><br>
-                        • Virus<br>
-                        • Gusanos<br>
-                        • Troyanos
-                    </div>
-                    <div class="detalles lang-en" style="display: none;">
-                        <strong>Types:</strong><br>
-                        • Viruses<br>
-                        • Worms<br>
-                        • Trojans
-                    </div>
-                </div>
-            </div>
-
-            <!-- 4. SQL Injection -->
-            <div class="amenaza-card">
-                <img src="https://images.unsplash.com/photo-1526374965328-7f5ae4e8b08f?w=300&q=80" alt="SQL Injection" class="img-amenaza">
-                <div class="amenaza-info">
-                    <div>
-                        <span class="tag-amenaza" class="lang-es">Amenaza Técnica</span>
-                        <span class="tag-amenaza" class="lang-en" style="display: none;">Technical Threat</span>
-                        <h3 class="lang-es">SQL Injection</h3>
-                        <h3 class="lang-en" style="display: none;">SQL Injection</h3>
-                        <p class="descripcion lang-es">Ataque que inyecta código SQL malicioso en formularios para acceder ilegalmente a bases de datos.</p>
-                        <p class="descripcion lang-en" style="display: none;">An attack that injects malicious SQL code into forms to illegally access databases.</p>
-                    </div>
-                    <div class="detalles lang-es">
-                        <strong>Impacto:</strong><br>
-                        • Robo de datos<br>
-                        • Pérdida de integridad<br>
-                        • Acceso no autorizado
-                    </div>
-                    <div class="detalles lang-en" style="display: none;">
-                        <strong>Impact:</strong><br>
-                        • Data theft<br>
-                        • Loss of integrity<br>
-                        • Unauthorized access
-                    </div>
-                </div>
-            </div>
-
-            <!-- 5. DDoS -->
-            <div class="amenaza-card">
-                <img src="https://images.unsplash.com/photo-1633356122544-f134324ef6db?w=300&q=80" alt="DDoS" class="img-amenaza">
-                <div class="amenaza-info">
-                    <div>
-                        <span class="tag-amenaza" class="lang-es">Amenaza Alta</span>
-                        <span class="tag-amenaza" class="lang-en" style="display: none;">High Threat</span>
-                        <h3 class="lang-es">Ataque DDoS</h3>
-                        <h3 class="lang-en" style="display: none;">DDoS Attack</h3>
-                        <p class="descripcion lang-es">Inunda un servidor con millones de solicitudes para derribarlo y hacerlo inaccesible para usuarios legítimos.</p>
-                        <p class="descripcion lang-en" style="display: none;">Floods a server with millions of requests to take it down and make it inaccessible to legitimate users.</p>
-                    </div>
-                    <div class="detalles lang-es">
-                        <strong>Consecuencias:</strong><br>
-                        • Indisponibilidad de servicios<br>
-                        • Pérdidas económicas<br>
-                        • Daño reputacional
-                    </div>
-                    <div class="detalles lang-en" style="display: none;">
-                        <strong>Consequences:</strong><br>
-                        • Service unavailability<br>
-                        • Economic losses<br>
-                        • Reputation damage
-                    </div>
-                </div>
-            </div>
-
-            <!-- 6. Zero-Day Exploits -->
-            <div class="amenaza-card">
-                <img src="https://images.unsplash.com/photo-1511707267537-b85faf00021e?w=300&q=80" alt="Zero-Day" class="img-amenaza">
-                <div class="amenaza-info">
-                    <div>
-                        <span class="tag-amenaza" class="lang-es">Amenaza Crítica</span>
-                        <span class="tag-amenaza" class="lang-en" style="display: none;">Critical Threat</span>
-                        <h3 class="lang-es">Zero-Day Exploits</h3>
-                        <h3 class="lang-en" style="display: none;">Zero-Day Exploits</h3>
-                        <p class="descripcion lang-es">Vulnerabilidades desconocidas que son explotadas antes de que el fabricante las pueda parchear.</p>
-                        <p class="descripcion lang-en" style="display: none;">Unknown vulnerabilities exploited before the vendor can patch them.</p>
-                    </div>
-                    <div class="detalles lang-es">
-                        <strong>Características:</strong><br>
-                        • Vulnerabilidades desconocidas<br>
-                        • Sin parches disponibles<br>
-                        • Muy difíciles de detectar
-                    </div>
-                    <div class="detalles lang-en" style="display: none;">
-                        <strong>Characteristics:</strong><br>
-                        • Unknown vulnerabilities<br>
-                        • No patches available<br>
-                        • Very difficult to detect
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section id="modulos" class="seccion-contenido">
-        <h2 class="titulo-seccion">
-            <span class="lang-es">Módulos de Aprendizaje</span>
-            <span class="lang-en">Learning Modules</span>
-        </h2>
-        <p class="subtitulo-seccion">
-            <span class="lang-es">Domina cada aspecto fundamental de la ciberseguridad a través de módulos especializados.</span>
-            <span class="lang-en">Master each fundamental aspect of cybersecurity through specialized modules.</span>
+            <span class="lang-es">Descubre la magia, historia y naturaleza que hacen de Sucre una joya inolvidable.</span>
+            <span class="lang-en">Discover the magic, history, and nature that make Sucre an unforgettable gem.</span>
         </p>
         
         <div class="contenedor-tarjetas">
 
-            <!-- Módulo 1: Fundamentos -->
+            <!-- 1. Casa de la Libertad -->
             <div class="tarjeta">
-                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&q=80" alt="Fundamentos" class="img-tarjeta">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" alt="Casa de la Libertad" class="img-tarjeta">
                 <div class="tarjeta-cuerpo">
                     <div>
-                        <h3 class="lang-es">Fundamentos de Seguridad</h3>
-                        <h3 class="lang-en" style="display: none;">Security Fundamentals</h3>
-                        <p class="descripcion lang-es">Aprende los conceptos básicos: confidencialidad, integridad, disponibilidad (CIA) y principios esenciales de defensa.</p>
-                        <p class="descripcion lang-en" style="display: none;">Learn the basics: Confidentiality, Integrity, Availability (CIA) and essential defense principles.</p>
-                        <p class="ubicacion lang-es">⭐ Nivel: Principiante</p>
-                        <p class="ubicacion lang-en" style="display: none;">⭐ Level: Beginner</p>
+                        <h3 class="lang-es">Casa de la Libertad</h3>
+                        <h3 class="lang-en" style="display: none;">House of Liberty</h3>
+                        <p class="descripcion lang-es">El recinto histórico más importante de Bolivia, donde se firmó el acta de independencia. Un lugar cargado de historia y simbolismo.</p>
+                        <p class="descripcion lang-en" style="display: none;">Bolivia's most important historical site, where the declaration of independence was signed. A place filled with history and symbolism.</p>
+                        <p class="ubicacion lang-es">📍 Plaza 25 de Mayo - Centro</p>
+                        <p class="ubicacion lang-en" style="display: none;">📍 25 de Mayo Square - Downtown</p>
                     </div>
-                    <a href="#" class="btn-maps lang-es">Explorar Módulo</a>
-                    <a href="#" class="btn-maps lang-en" style="display: none;">Explore Module</a>
+                    <a href="https://maps.google.com/?cid=7904192458436739288" target="_blank" class="btn-maps lang-es">Ver en Google Maps</a>
+                    <a href="https://maps.google.com/?cid=7904192458436739288" target="_blank" class="btn-maps lang-en" style="display: none;">View on Google Maps</a>
                 </div>
             </div>
 
-            <!-- Módulo 2: Contraseñas -->
+            <!-- 2. Mirador de La Recoleta -->
             <div class="tarjeta">
-                <img src="https://images.unsplash.com/photo-1526374965328-7f5ae4e8b08f?w=400&q=80" alt="Contraseñas" class="img-tarjeta">
+                <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400&q=80" alt="Mirador de La Recoleta" class="img-tarjeta">
                 <div class="tarjeta-cuerpo">
                     <div>
-                        <h3 class="lang-es">Gestión de Contraseñas</h3>
-                        <h3 class="lang-en" style="display: none;">Password Management</h3>
-                        <p class="descripcion lang-es">Crea contraseñas fuertes, utiliza autenticación multifactor y gestiona tus credenciales de forma segura.</p>
-                        <p class="descripcion lang-en" style="display: none;">Create strong passwords, use multi-factor authentication, and manage your credentials securely.</p>
-                        <p class="ubicacion lang-es">⭐⭐ Nivel: Intermedio</p>
-                        <p class="ubicacion lang-en" style="display: none;">⭐⭐ Level: Intermediate</p>
+                        <h3 class="lang-es">Mirador de La Recoleta</h3>
+                        <h3 class="lang-en" style="display: none;">La Recoleta Viewpoint</h3>
+                        <p class="descripcion lang-es">Un balcón al pasado donde los tejados rojos de Sucre se funden con el cielo. Vistas panorámicas espectaculares.</p>
+                        <p class="descripcion lang-en" style="display: none;">A balcony to the past where Sucre's red roofs blend with the sky. Spectacular panoramic views.</p>
+                        <p class="ubicacion lang-es">📍 Calle Arce - Zona Norte</p>
+                        <p class="ubicacion lang-en" style="display: none;">📍 Arce Street - North Zone</p>
                     </div>
-                    <a href="#" class="btn-maps lang-es">Explorar Módulo</a>
-                    <a href="#" class="btn-maps lang-en" style="display: none;">Explore Module</a>
+                    <a href="https://maps.google.com/?cid=14417806559510060719" target="_blank" class="btn-maps lang-es">Ver en Google Maps</a>
+                    <a href="https://maps.google.com/?cid=14417806559510060719" target="_blank" class="btn-maps lang-en" style="display: none;">View on Google Maps</a>
                 </div>
             </div>
 
-            <!-- Módulo 3: Redes -->
+            <!-- 3. Monumento a Juana Azurduy -->
             <div class="tarjeta">
-                <img src="https://images.unsplash.com/photo-1560807707-38cc612d91b3?w=400&q=80" alt="Redes" class="img-tarjeta">
+                <img src="https://images.unsplash.com/photo-1576395407847-2aac5b39bd0b?w=400&q=80" alt="Monumento a Juana Azurduy" class="img-tarjeta">
                 <div class="tarjeta-cuerpo">
                     <div>
-                        <h3 class="lang-es">Seguridad en Redes</h3>
-                        <h3 class="lang-en" style="display: none;">Network Security</h3>
-                        <p class="descripcion lang-es">Cortafuegos, VPN, HTTPS, protocolo de seguridad y arquitectura de redes seguras.</p>
-                        <p class="descripcion lang-en" style="display: none;">Firewalls, VPNs, HTTPS, security protocols, and secure network architecture.</p>
-                        <p class="ubicacion lang-es">⭐⭐ Nivel: Intermedio</p>
-                        <p class="ubicacion lang-en" style="display: none;">⭐⭐ Level: Intermediate</p>
+                        <h3 class="lang-es">Monumento a Juana Azurduy</h3>
+                        <h3 class="lang-en" style="display: none;">Juana Azurduy Monument</h3>
+                        <p class="descripcion lang-es">La renovada plaza principal de Sucre cuenta con este homenaje a la heroína de la independencia boliviana.</p>
+                        <p class="descripcion lang-en" style="display: none;">The renovated main square of Sucre features this tribute to the Bolivian independence heroine.</p>
+                        <p class="ubicacion lang-es">📍 Plaza Principal - Centro Histórico</p>
+                        <p class="ubicacion lang-en" style="display: none;">📍 Main Square - Historic Center</p>
                     </div>
-                    <a href="#" class="btn-maps lang-es">Explorar Módulo</a>
-                    <a href="#" class="btn-maps lang-en" style="display: none;">Explore Module</a>
+                    <a href="https://maps.google.com/?cid=6795689224885272719" target="_blank" class="btn-maps lang-es">Ver en Google Maps</a>
+                    <a href="https://maps.google.com/?cid=6795689224885272719" target="_blank" class="btn-maps lang-en" style="display: none;">View on Google Maps</a>
                 </div>
             </div>
 
-            <!-- Módulo 4: Malware & Análisis -->
+            <!-- 4. Parque Cretácico -->
             <div class="tarjeta">
-                <img src="https://images.unsplash.com/photo-1551565326-eb8f31d33b00?w=400&q=80" alt="Malware" class="img-tarjeta">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&q=80" alt="Parque Cretácico" class="img-tarjeta">
                 <div class="tarjeta-cuerpo">
                     <div>
-                        <h3 class="lang-es">Malware y Análisis Forense</h3>
-                        <h3 class="lang-en" style="display: none;">Malware & Forensic Analysis</h3>
-                        <p class="descripcion lang-es">Identifica, analiza y responde a malware. Técnicas de análisis dinámico y estático.</p>
-                        <p class="descripcion lang-en" style="display: none;">Identify, analyze, and respond to malware. Dynamic and static analysis techniques.</p>
-                        <p class="ubicacion lang-es">⭐⭐⭐ Nivel: Avanzado</p>
-                        <p class="ubicacion lang-en" style="display: none;">⭐⭐⭐ Level: Advanced</p>
+                        <h3 class="lang-es">Parque Cretácico</h3>
+                        <h3 class="lang-en" style="display: none;">Cretaceous Park</h3>
+                        <p class="descripcion lang-es">Hogar de huellas de dinosaurios y réplicas gigantes. Un viaje fascinante a la era mesozoica.</p>
+                        <p class="descripcion lang-en" style="display: none;">Home to dinosaur footprints and giant replicas. A fascinating journey to the Mesozoic era.</p>
+                        <p class="ubicacion lang-es">📍 Zona Rural - 4 km del Centro</p>
+                        <p class="ubicacion lang-en" style="display: none;">📍 Rural Area - 4 km from Downtown</p>
                     </div>
-                    <a href="#" class="btn-maps lang-es">Explorar Módulo</a>
-                    <a href="#" class="btn-maps lang-en" style="display: none;">Explore Module</a>
+                    <a href="https://maps.app.goo.gl/gZuthhTejLauP4DH6" target="_blank" class="btn-maps lang-es">Ver en Google Maps</a>
+                    <a href="https://maps.app.goo.gl/gZuthhTejLauP4DH6" target="_blank" class="btn-maps lang-en" style="display: none;">View on Google Maps</a>
                 </div>
             </div>
 
-            <!-- Módulo 5: Aplicaciones Web -->
+            <!-- 5. Cementerio General -->
             <div class="tarjeta">
-                <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&q=80" alt="Web Security" class="img-tarjeta">
+                <img src="https://images.unsplash.com/photo-1549778860-a33822aa0919?w=400&q=80" alt="Cementerio General" class="img-tarjeta">
                 <div class="tarjeta-cuerpo">
                     <div>
-                        <h3 class="lang-es">Seguridad en Aplicaciones Web</h3>
-                        <h3 class="lang-en" style="display: none;">Web Application Security</h3>
-                        <p class="descripcion lang-es">OWASP Top 10, XSS, CSRF, SQL Injection y técnicas de pruebas de penetración web.</p>
-                        <p class="descripcion lang-en" style="display: none;">OWASP Top 10, XSS, CSRF, SQL Injection, and web penetration testing techniques.</p>
-                        <p class="ubicacion lang-es">⭐⭐⭐ Nivel: Avanzado</p>
-                        <p class="ubicacion lang-en" style="display: none;">⭐⭐⭐ Level: Advanced</p>
+                        <h3 class="lang-es">Cementerio General</h3>
+                        <h3 class="lang-en" style="display: none;">General Cemetery</h3>
+                        <p class="descripcion lang-es">Jardín patrimonial de paz y serenidad donde la arquitectura rinde tributo a la vida y la historia.</p>
+                        <p class="descripcion lang-en" style="display: none;">A heritage garden of peace and serenity where architecture pays tribute to life and history.</p>
+                        <p class="ubicacion lang-es">📍 Avenida Brasil - Zona Este</p>
+                        <p class="ubicacion lang-en" style="display: none;">📍 Brazil Avenue - East Zone</p>
                     </div>
-                    <a href="#" class="btn-maps lang-es">Explorar Módulo</a>
-                    <a href="#" class="btn-maps lang-en" style="display: none;">Explore Module</a>
+                    <a href="https://maps.google.com/?cid=10901472376692774237" target="_blank" class="btn-maps lang-es">Ver en Google Maps</a>
+                    <a href="https://maps.google.com/?cid=10901472376692774237" target="_blank" class="btn-maps lang-en" style="display: none;">View on Google Maps</a>
                 </div>
             </div>
 
-            <!-- Módulo 6: Respuesta a Incidentes -->
+            <!-- 6. Parque Bolívar -->
             <div class="tarjeta">
-                <img src="https://images.unsplash.com/photo-1614028694312-e50f67865ba0?w=400&q=80" alt="Incident Response" class="img-tarjeta">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80" alt="Parque Bolívar" class="img-tarjeta">
                 <div class="tarjeta-cuerpo">
                     <div>
-                        <h3 class="lang-es">Respuesta a Incidentes</h3>
-                        <h3 class="lang-en" style="display: none;">Incident Response</h3>
-                        <p class="descripcion lang-es">Protocolos de respuesta, análisis de logs, detección de amenazas y recuperación post-incidente.</p>
-                        <p class="descripcion lang-en" style="display: none;">Response protocols, log analysis, threat detection, and post-incident recovery.</p>
-                        <p class="ubicacion lang-es">⭐⭐⭐ Nivel: Avanzado</p>
-                        <p class="ubicacion lang-en" style="display: none;">⭐⭐⭐ Level: Advanced</p>
+                        <h3 class="lang-es">Parque Bolívar</h3>
+                        <h3 class="lang-en" style="display: none;">Bolivar Park</h3>
+                        <p class="descripcion lang-es">Un oasis de encanto donde la Torre Eiffel y la naturaleza se encuentran. Ideal para relajarse y disfrutar.</p>
+                        <p class="descripcion lang-en" style="display: none;">An oasis of charm where the Eiffel Tower and nature meet. Ideal for relaxing and enjoying.</p>
+                        <p class="ubicacion lang-es">📍 Zona Sur - Área Verde</p>
+                        <p class="ubicacion lang-en" style="display: none;">📍 South Zone - Green Area</p>
                     </div>
-                    <a href="#" class="btn-maps lang-es">Explorar Módulo</a>
-                    <a href="#" class="btn-maps lang-en" style="display: none;">Explore Module</a>
+                    <a href="https://maps.app.goo.gl/NBoeE6FRtp2uJTxD9" target="_blank" class="btn-maps lang-es">Ver en Google Maps</a>
+                    <a href="https://maps.app.goo.gl/NBoeE6FRtp2uJTxD9" target="_blank" class="btn-maps lang-en" style="display: none;">View on Google Maps</a>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <section id="practicas" class="seccion-contenido bg-premium-combinado">
+    <section id="gastronomia" class="seccion-contenido">
         <h2 class="titulo-seccion">
-            <span class="lang-es">Mejores Prácticas de Seguridad</span>
-            <span class="lang-en">Security Best Practices</span>
+            <span class="lang-es">Gastronomía y Tradición</span>
+            <span class="lang-en">Gastronomy & Tradition</span>
         </h2>
         <p class="subtitulo-seccion">
-            <span class="lang-es">Estrategias probadas para proteger tus sistemas, datos y dispositivos contra amenazas.</span>
-            <span class="lang-en">Proven strategies to protect your systems, data, and devices against threats.</span>
+            <span class="lang-es">Conoce los sabores tradicionales de Chuquisaca y sus localidades de origen exactas.</span>
+            <span class="lang-en">Discover the traditional flavors of Chuquisaca and their precise towns of origin.</span>
         </p>
         
-        <div class="grid-practicas">
+        <div class="contenedor-gastronomia">
 
-            <!-- Práctica 1 -->
-            <div class="practica-card">
-                <div>
-                    <div class="icono-rest">🔐</div>
-                    <h3 class="lang-es">Contraseñas Fuertes</h3>
-                    <h3 class="lang-en" style="display: none;">Strong Passwords</h3>
-                    <p class="lang-es">Utiliza contraseñas de al menos 12 caracteres con mayúsculas, minúsculas, números y símbolos especiales.</p>
-                    <p class="lang-en" style="display: none;">Use passwords of at least 12 characters with uppercase, lowercase, numbers, and special symbols.</p>
-                </div>
-                <div>
-                    <a href="#" class="btn-ir lang-es">Aprender Más</a>
-                    <a href="#" class="btn-ir lang-en" style="display: none;">Learn More</a>
+            <!-- 1. El Mondongo -->
+            <div class="plato-card">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=300&q=80" alt="Mondongo chuquisaqueño" class="img-plato">
+                <div class="plato-info">
+                    <div>
+                        <span class="tag-origen" class="lang-es">Valles del Campo</span>
+                        <span class="tag-origen lang-en" style="display: none;">Field Valleys</span>
+                        <h3 class="lang-es">El Mondongo</h3>
+                        <h3 class="lang-en" style="display: none;">Mondongo</h3>
+                        <p class="descripcion lang-es">Plato festivo preparado tradicionalmente para la fiesta de Todos los Santos. Su balance de ajíes proviene de antiguas recetas de las haciendas.</p>
+                        <p class="descripcion lang-en" style="display: none;">A festive dish traditionally prepared for All Saints' Day. Its pepper balance stems from ancient recipes from the estates.</p>
+                    </div>
+                    <div class="ingredientes lang-es">
+                        <strong>Ingredientes:</strong><br>
+                        Carne de cerdo frita, ají colorado, papas y mote
+                    </div>
+                    <div class="ingredientes lang-en" style="display: none;">
+                        <strong>Ingredients:</strong><br>
+                        Fried pork, red pepper, potatoes and mote
+                    </div>
                 </div>
             </div>
 
-            <!-- Práctica 2 -->
-            <div class="practica-card">
-                <div>
-                    <div class="icono-rest">📱</div>
-                    <h3 class="lang-es">Autenticación Multifactor (MFA)</h3>
-                    <h3 class="lang-en" style="display: none;">Multi-Factor Authentication (MFA)</h3>
-                    <p class="lang-es">Activa MFA en todas tus cuentas importantes: correo, banca, redes sociales.</p>
-                    <p class="lang-en" style="display: none;">Enable MFA on all your important accounts: email, banking, social media.</p>
-                </div>
-                <div>
-                    <a href="#" class="btn-ir lang-es">Aprender Más</a>
-                    <a href="#" class="btn-ir lang-en" style="display: none;">Learn More</a>
-                </div>
-            </div>
-
-            <!-- Práctica 3 -->
-            <div class="practica-card">
-                <div>
-                    <div class="icono-rest">🔄</div>
-                    <h3 class="lang-es">Actualizaciones Regulares</h3>
-                    <h3 class="lang-en" style="display: none;">Regular Updates</h3>
-                    <p class="lang-es">Mantén tu sistema operativo, navegador y aplicaciones siempre actualizadas con parches de seguridad.</p>
-                    <p class="lang-en" style="display: none;">Keep your OS, browser, and applications updated with security patches.</p>
-                </div>
-                <div>
-                    <a href="#" class="btn-ir lang-es">Aprender Más</a>
-                    <a href="#" class="btn-ir lang-en" style="display: none;">Learn More</a>
+            <!-- 2. Chorizos Chuquisaqueños -->
+            <div class="plato-card">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561501?w=300&q=80" alt="Chorizo chuquisaqueño" class="img-plato">
+                <div class="plato-info">
+                    <div>
+                        <span class="tag-origen" class="lang-es">Sucre Centro</span>
+                        <span class="tag-origen lang-en" style="display: none;">Downtown Sucre</span>
+                        <h3 class="lang-es">Chorizos Chuquisaqueños</h3>
+                        <h3 class="lang-en" style="display: none;">Chuquisaca Sausages</h3>
+                        <p class="descripcion lang-es">Nacidos en los salones coloniales de Sucre como un entremés criollo. Su receta artesanal es un emblema urbano.</p>
+                        <p class="descripcion lang-en" style="display: none;">Born in Sucre's colonial halls as a Creole appetizer. Its artisanal recipe is an urban emblem.</p>
+                    </div>
+                    <div class="ingredientes lang-es">
+                        <strong>Ingredientes:</strong><br>
+                        Carne de res y cerdo, ensalada criolla, ají y pan
+                    </div>
+                    <div class="ingredientes lang-en" style="display: none;">
+                        <strong>Ingredients:</strong><br>
+                        Beef and pork, Creole salad, pepper and bread
+                    </div>
                 </div>
             </div>
 
-            <!-- Práctica 4 -->
-            <div class="practica-card">
-                <div>
-                    <div class="icono-rest">⚠️</div>
-                    <h3 class="lang-es">Evita Phishing</h3>
-                    <h3 class="lang-en" style="display: none;">Avoid Phishing</h3>
-                    <p class="lang-es">Verifica remitentes, no hagas clic en links sospechosos y sospecha de peticiones inesperadas.</p>
-                    <p class="lang-en" style="display: none;">Verify senders, don't click suspicious links, and be suspicious of unexpected requests.</p>
-                </div>
-                <div>
-                    <a href="#" class="btn-ir lang-es">Aprender Más</a>
-                    <a href="#" class="btn-ir lang-en" style="display: none;">Learn More</a>
-                </div>
-            </div>
-
-            <!-- Práctica 5 -->
-            <div class="practica-card">
-                <div>
-                    <div class="icono-rest">💾</div>
-                    <h3 class="lang-es">Copias de Seguridad</h3>
-                    <h3 class="lang-en" style="display: none;">Backups</h3>
-                    <p class="lang-es">Realiza copias de seguridad regulares en ubicaciones seguras y desconectadas de la red.</p>
-                    <p class="lang-en" style="display: none;">Make regular backups to safe, offline locations.</p>
-                </div>
-                <div>
-                    <a href="#" class="btn-ir lang-es">Aprender Más</a>
-                    <a href="#" class="btn-ir lang-en" style="display: none;">Learn More</a>
+            <!-- 3. Asado de Chancho Yotaleño -->
+            <div class="plato-card">
+                <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=300&q=80" alt="Asado de Chancho" class="img-plato">
+                <div class="plato-info">
+                    <div>
+                        <span class="tag-origen" class="lang-es">Yotala Municipio</span>
+                        <span class="tag-origen lang-en" style="display: none;">Yotala Municipality</span>
+                        <h3 class="lang-es">Asado de Chancho Yotaleño</h3>
+                        <h3 class="lang-en" style="display: none;">Yotala Roasted Pork</h3>
+                        <p class="descripcion lang-es">Originario de Yotala. El cerdo se cuece lentamente dándole un sabor jugoso inigualable.</p>
+                        <p class="descripcion lang-en" style="display: none;">Originating from Yotala. The pork is slow-cooked, giving it an unparalleled juicy flavor.</p>
+                    </div>
+                    <div class="ingredientes lang-es">
+                        <strong>Ingredientes:</strong><br>
+                        Cerdo, ají colorado, chicha local y mote
+                    </div>
+                    <div class="ingredientes lang-en" style="display: none;">
+                        <strong>Ingredients:</strong><br>
+                        Pork, red pepper, local chicha and mote
+                    </div>
                 </div>
             </div>
 
-            <!-- Práctica 6 -->
-            <div class="practica-card">
-                <div>
-                    <div class="icono-rest">🛡️</div>
-                    <h3 class="lang-es">Software de Antivirus</h3>
-                    <h3 class="lang-en" style="display: none;">Antivirus Software</h3>
-                    <p class="lang-es">Instala y mantén actualizado un antivirus confiable con protección en tiempo real.</p>
-                    <p class="lang-en" style="display: none;">Install and keep a trusted antivirus with real-time protection updated.</p>
-                </div>
-                <div>
-                    <a href="#" class="btn-ir lang-es">Aprender Más</a>
-                    <a href="#" class="btn-ir lang-en" style="display: none;">Learn More</a>
-                </div>
-            </div>
-
-            <!-- Práctica 7 -->
-            <div class="practica-card">
-                <div>
-                    <div class="icono-rest">🔒</div>
-                    <h3 class="lang-es">VPN y Conexiones Seguras</h3>
-                    <h3 class="lang-en" style="display: none;">VPN & Secure Connections</h3>
-                    <p class="lang-es">Usa VPN en redes públicas y evita conectarte a WiFi sin contraseña.</p>
-                    <p class="lang-en" style="display: none;">Use VPN on public networks and avoid connecting to unprotected WiFi.</p>
-                </div>
-                <div>
-                    <a href="#" class="btn-ir lang-es">Aprender Más</a>
-                    <a href="#" class="btn-ir lang-en" style="display: none;">Learn More</a>
-                </div>
-            </div>
-
-            <!-- Práctica 8 -->
-            <div class="practica-card">
-                <div>
-                    <div class="icono-rest">👁️</div>
-                    <h3 class="lang-es">Monitoreo Activo</h3>
-                    <h3 class="lang-en" style="display: none;">Active Monitoring</h3>
-                    <p class="lang-es">Revisa regularmente tus actividades de cuenta, transacciones y cambios no autorizados.</p>
-                    <p class="lang-en" style="display: none;">Regularly review your account activities, transactions, and unauthorized changes.</p>
-                </div>
-                <div>
-                    <a href="#" class="btn-ir lang-es">Aprender Más</a>
-                    <a href="#" class="btn-ir lang-en" style="display: none;">Learn More</a>
+            <!-- 4. Karapecho Chuquisaqueño -->
+            <div class="plato-card">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=300&q=80" alt="Karapecho" class="img-plato">
+                <div class="plato-info">
+                    <div>
+                        <span class="tag-origen" class="lang-es">Tradición Rural</span>
+                        <span class="tag-origen lang-en" style="display: none;">Rural Tradition</span>
+                        <h3 class="lang-es">Karapecho Chuquisaqueño</h3>
+                        <h3 class="lang-en" style="display: none;">Chuquisaca Karapecho</h3>
+                        <p class="descripcion lang-es">Plato tradicional que destaca por su carne de res seca (charque), preparada con auténtico sabor de los valles.</p>
+                        <p class="descripcion lang-en" style="display: none;">Traditional dish known for its dried beef (charque), prepared with authentic valley flavor.</p>
+                    </div>
+                    <div class="ingredientes lang-es">
+                        <strong>Ingredientes:</strong><br>
+                        Charque de res, arroz, papas, huevo y ensalada
+                    </div>
+                    <div class="ingredientes lang-en" style="display: none;">
+                        <strong>Ingredients:</strong><br>
+                        Dried beef, rice, potatoes, egg and salad
+                    </div>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <section id="ruta" class="seccion-contenido">
+    <section id="restaurantes" class="seccion-contenido bg-premium-combinado">
         <h2 class="titulo-seccion">
-            <span class="lang-es">Ruta de Aprendizaje Recomendada</span>
-            <span class="lang-en">Recommended Learning Path</span>
+            <span class="lang-es">Restaurantes Reconocidos</span>
+            <span class="lang-en">Renowned Restaurants</span>
         </h2>
         <p class="subtitulo-seccion">
-            <span class="lang-es">Sigue este camino progresivo desde principiante hasta experto en ciberseguridad.</span>
-            <span class="lang-en">Follow this progressive path from beginner to cybersecurity expert.</span>
+            <span class="lang-es">Establecimientos gastronómicos altamente recomendados para disfrutar tu estadía en Sucre.</span>
+            <span class="lang-en">Highly recommended dining establishments to enjoy your stay in Sucre.</span>
+        </p>
+        
+        <div class="grid-restaurantes">
+
+            <!-- Restaurante 1 -->
+            <div class="restaurante-card">
+                <div>
+                    <div class="icono-rest">🍽️</div>
+                    <h3 class="lang-es">Azafrán</h3>
+                    <h3 class="lang-en" style="display: none;">Azafran</h3>
+                    <p class="lang-es">Prestigioso restaurante y servicio de catering de primer nivel. Destaca por su alta cocina y la perfecta fusión de sabores e ingredientes tradicionales con técnicas culinarias contemporáneas.</p>
+                    <p class="lang-en" style="display: none;">Prestigious top-tier restaurant and catering service. Known for its fine dining and perfect fusion of traditional flavors with contemporary culinary techniques.</p>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/azafranrestaurantycatering/" target="_blank" class="btn-ir lang-es">Visitar Sitio</a>
+                    <a href="https://www.facebook.com/azafranrestaurantycatering/" target="_blank" class="btn-ir lang-en" style="display: none;">Visit Site</a>
+                </div>
+            </div>
+
+            <!-- Restaurante 2 -->
+            <div class="restaurante-card">
+                <div>
+                    <div class="icono-rest">🎭</div>
+                    <h3 class="lang-es">Centro Cultural Orígenes</h3>
+                    <h3 class="lang-en" style="display: none;">Cultural Center Origenes</h3>
+                    <p class="lang-es">Un espacio cultural único e imperdible en Sucre. Combina de forma espectacular una cena de platos típicos regionales con shows folclóricos de danza boliviana.</p>
+                    <p class="lang-en" style="display: none;">A unique and unmissable cultural venue in Sucre. It beautifully combines authentic regional dishes with live Bolivian folklore dance shows.</p>
+                </div>
+                <div>
+                    <a href="https://www.facebook.com/EspacioCulturalOrigenes/" target="_blank" class="btn-ir lang-es">Visitar Sitio</a>
+                    <a href="https://www.facebook.com/EspacioCulturalOrigenes/" target="_blank" class="btn-ir lang-en" style="display: none;">Visit Site</a>
+                </div>
+            </div>
+
+            <!-- Restaurante 3 -->
+            <div class="restaurante-card">
+                <div>
+                    <div class="icono-rest">☕</div>
+                    <h3 class="lang-es">La Terraza</h3>
+                    <h3 class="lang-en" style="display: none;">The Terrace</h3>
+                    <p class="lang-es">Excelente alternativa para relajarse y disfrutar del ambiente chuquisaqueño. Cuenta con un menú variado ideal para cafés por la tarde, almuerzos ligeros o cenas agradables.</p>
+                    <p class="lang-en" style="display: none;">Excellent option to relax and absorb the local atmosphere. It features a diverse menu ideal for afternoon coffee, light lunches, or pleasant dinners.</p>
+                </div>
+                <div>
+                    <a href="https://maps.google.com/maps/search/La+Terraza+Sucre" target="_blank" class="btn-ir lang-es">Visitar Sitio</a>
+                    <a href="https://maps.google.com/maps/search/La+Terraza+Sucre" target="_blank" class="btn-ir lang-en" style="display: none;">Visit Site</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="planear" class="seccion-contenido">
+        <h2 class="titulo-seccion">
+            <span class="lang-es">Itinerario Completo Recomendado</span>
+            <span class="lang-en">Recommended Full Itinerary</span>
+        </h2>
+        <p class="subtitulo-seccion">
+            <span class="lang-es">Sigue esta precisa ruta gastronómica e histórica para aprovechar tu día al máximo en Sucre.</span>
+            <span class="lang-en">Follow this precise gastronomic and historical route to make the most of your day in Sucre.</span>
         </p>
         
         <div class="itinerario">
@@ -1190,48 +1030,48 @@
                     <span class="paso">1</span>
                     <div>
                         <h4>
-                            <span class="lang-es">Fundamentos de Ciberseguridad</span>
-                            <span class="lang-en">Cybersecurity Fundamentals</span>
-                            <span>Semana 1-2</span>
+                            <span class="lang-es">Desayuno en el Centro</span>
+                            <span class="lang-en">Breakfast Downtown</span>
+                            <span>08:30 AM</span>
                         </h4>
-                        <p class="lang-es">Comienza aprendiendo los conceptos básicos: la tríada CIA (Confidencialidad, Integridad, Disponibilidad), tipos de amenazas, y los principios de defensa en profundidad. Comprende por qué la ciberseguridad es importante en la actualidad.</p>
-                        <p class="lang-en">Start by learning the basics: the CIA triad (Confidentiality, Integrity, Availability), types of threats, and defense-in-depth principles. Understand why cybersecurity is important today.</p>
+                        <p class="lang-es">Comienza tu mañana con un excelente café y repostería artesanal en <strong>Café Metro</strong>, ubicado estratégicamente en plena Plaza Principal, donde podrás observar la actividad cotidiana de Sucre.</p>
+                        <p class="lang-en">Start your morning with excellent coffee and artisan pastry at <strong>Café Metro</strong>, strategically located in the main square, where you can observe Sucre's daily activity.</p>
                     </div>
                 </li>
                 <li>
                     <span class="paso">2</span>
                     <div>
                         <h4>
-                            <span class="lang-es">Gestión de Identidad y Acceso</span>
-                            <span class="lang-en">Identity & Access Management</span>
-                            <span>Semana 3-4</span>
+                            <span class="lang-es">Mañana Cultural e Histórica</span>
+                            <span class="lang-en">Cultural & History Morning</span>
+                            <span>10:00 AM</span>
                         </h4>
-                        <p class="lang-es">Aprende a crear contraseñas seguras, implementar autenticación multifactor (MFA), gestionar sesiones y entender OAuth y SAML. Estos son los pilares de la defensa personal.</p>
-                        <p class="lang-en">Learn to create secure passwords, implement multi-factor authentication (MFA), manage sessions, and understand OAuth and SAML. These are the pillars of personal defense.</p>
+                        <p class="lang-es">Cruza la acera para ingresar a la histórica <strong>Casa de la Libertad</strong> y conocer la gran sala donde nació la República de Bolivia. Luego camina por las calles empedradas admirando la arquitectura colonial de la ciudad.</p>
+                        <p class="lang-en">Cross the street to step into the historical <strong>Freedom House</strong> and visit the grand hall where the Republic of Bolivia was born. Then walk the cobblestone streets admiring the city's colonial architecture.</p>
                     </div>
                 </li>
                 <li>
                     <span class="paso">3</span>
                     <div>
                         <h4>
-                            <span class="lang-es">Seguridad en Redes y Sistemas</span>
-                            <span class="lang-en">Network & System Security</span>
-                            <span>Semana 5-7</span>
+                            <span class="lang-es">Almuerzo Gourmet en Azafrán</span>
+                            <span class="lang-en">Gourmet Lunch at Azafrán</span>
+                            <span>12:40 PM</span>
                         </h4>
-                        <p class="lang-es">Entiende cómo funcionan los cortafuegos, VPN, HTTPS, y la arquitectura de redes seguras. Aprende sobre puertos, protocolos y cómo detectar actividades sospechosas en la red.</p>
-                        <p class="lang-en">Understand how firewalls, VPNs, HTTPS work, and secure network architecture. Learn about ports, protocols, and how to detect suspicious network activity.</p>
+                        <p class="lang-es">Dirígete al prestigioso restaurante <strong>Azafrán</strong> para disfrutar de un almuerzo de primer nivel que fusiona de manera magistral los sabores locales de Chuquisaca con técnicas culinarias internacionales.</p>
+                        <p class="lang-en">Head to the prestigious <strong>Azafrán</strong> restaurant to enjoy a high-end lunch that masterfully blends local Chuquisaca flavors with international culinary techniques.</p>
                     </div>
                 </li>
                 <li>
                     <span class="paso">4</span>
                     <div>
                         <h4>
-                            <span class="lang-es">Análisis de Amenazas Avanzadas</span>
-                            <span class="lang-en">Advanced Threat Analysis</span>
-                            <span>Semana 8-12</span>
+                            <span class="lang-es">Paseo y Atardecer Colonial</span>
+                            <span class="lang-en">Stroll & Colonial Sunset</span>
+                            <span>16:00 PM</span>
                         </h4>
-                        <p class="lang-es">Domina técnicas de análisis de malware, forensic digital, análisis de logs y respuesta a incidentes. Aprende a identificar indicadores de compromiso (IoC) y patrones de ataque.</p>
-                        <p class="lang-en">Master malware analysis, digital forensics, log analysis, and incident response. Learn to identify indicators of compromise (IoC) and attack patterns.</p>
+                        <p class="lang-es">Por la tarde, toma una caminata ligera cuesta arriba hacia el histórico <strong>Mirador de la Recoleta</strong>. Disfruta de un refresco tradicional bajo los arcos blancos mientras admiras la puesta de sol sobre los tejados rojos de la ciudad.</p>
+                        <p class="lang-en">In the afternoon, take a light uphill walk to the historic <strong>La Recoleta Viewpoint</strong>. Enjoy a traditional refreshment beneath the white arches while admiring the sunset over the city's red roofs.</p>
                     </div>
                 </li>
             </ul>
@@ -1239,10 +1079,10 @@
     </section>
 
     <footer>
-        <p class="lang-es">© 2026 CyberGuard - Plataforma de Educación en Ciberseguridad. Aprende, Protege, Prospera.</p>
-        <p class="lang-en">© 2026 CyberGuard - Cybersecurity Education Platform. Learn, Protect, Thrive.</p>
-        <p class="lang-es">Desarrollado para educar y empoderar a usuarios en seguridad digital.</p>
-        <p class="lang-en">Developed to educate and empower users in digital security.</p>
+        <p class="lang-es">© 2026 Portal de Turismo de Sucre - Capital Constitucional de Bolivia</p>
+        <p class="lang-en">© 2026 Sucre Tourism Portal - Constitutional Capital of Bolivia</p>
+        <p class="lang-es">Descubre, Explora, Disfruta | Desarrollado como Proyecto Académico de Frontend</p>
+        <p class="lang-en">Discover, Explore, Enjoy | Developed as a Frontend Academic Project</p>
     </footer>
 
     <script>
